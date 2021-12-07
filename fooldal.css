@@ -1,3 +1,4 @@
+/* menu háttér */
 ul {
     list-style-type: none;
     margin:auto;
@@ -5,37 +6,125 @@ ul {
     background-color: #333;
     text-align: center;
   }
-  
+/* kereső gomb oldalra igazítása  */
+  .topnav .search-container {
+    float: right;
+  }
+/* logó stílusa */
+  #logo{
+    margin: auto;
+    height: 50px;
+    width: 70px;
+    padding-top: 10px 10px;
+    float: left;
+  }
+  /* kereső bar és kereső gomb közös class-ának a stílusa */
+  .topnav {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 2px 2px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+/* kereső gomb és kereső konténer stílusa */
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  /* kereső gomb és kereső konténer hover-e */
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+  /* kereső konténer stílusa */
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+    /* kereső konténer stílusa */
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+  /* kereső gomb és kereső konténer hover-e */
+  .topnav .search-container button:hover {
+  background: #ccc;
+}
+  /* főmenü lista elemei */
   li{
     color:white;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
   }
-  
+  /* főmenü lista elemeinke a linkjei */
   li a{
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+  /* főmenü lista linkeinek  hoover-e */
    li a:hover {
     background-color: #111;
   }
+  /* főmenü lista elemeinke hoover-e */
   li:hover {
     background-color: #111;
   }
+  /* fő menű konténere */
   div{
       margin-left:auto;
       margin-right: auto;
   }
-
+/* sport menü div-e */
   #sportnavbar{
     margin-left:auto;
     margin-right: auto;
   }
+  /* Sport menu rendezetlen lista */
   #sportul {
+    list-style-type: none;
+    margin-left: 500px;
+    margin-right: 500px;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+  }
+  /* Sport menu rendezetlen lista elemei sorba rendezése */
+  #sportli{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+  /* Sport menu rendezetlen lista elemeinek a linkje */
+  #sportli a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Sport menu rendezetlen lista elemének hoover-e*/
+  #sportli a:hover {
+    background-color:#111;
+  }
+  /* hirek menü div-e */
+  #Hirekmenu{
+    margin-left:auto;
+    margin-right: auto;
+  }
+  /* Hirek menu rendezetlen lista */
+  #hirekul {
     list-style-type: none;
     margin-left: 500px;
     margin-right: 500px;
@@ -43,17 +132,114 @@ ul {
     background-color: red;
     text-align: center;
   }
-  #sportli{
+  /* Hirek menu rendezetlen lista elemei sorba rendezése */
+  #hirekli{
     margin-left: auto;
     margin-right: auto;
-      display: inline-block;
+    display: inline-block;
   }
-  #sportli a{
+  /* Hirek menu rendezetlen lista elemeinek a linkje */
+  #hirekli a{
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
   }
-  #sportli a:hover {
+  /* Hirek menu rendezetlen lista elemének hoover-e*/
+  #hirekli a:hover {
     background-color:blue;
   }
+  /* Politika menü div-e */
+  #Politikamenu{
+    margin-left:auto;
+    margin-right: auto;
+  }
+  /* Politika menu rendezetlen lista */
+  #politikaul {
+    list-style-type: none;
+    margin-left: 500px;
+    margin-right: 500px;
+    overflow: hidden;
+    background-color:orange;
+    text-align: center;
+  }
+  /* Politika menu rendezetlen lista elemei sorba rendezése */
+  #politikali{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+  /* Politika menu rendezetlen lista elemeinek a linkje */
+  #politikali a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Politika menu rendezetlen lista elemének hoover-e*/
+  #politikali a:hover {
+    background-color:blue;
+  }
+  /* Egészség menü div-e */
+  #egeszsegmenu{
+    margin-left:auto;
+    margin-right: auto;
+  }
+  /* Egészség menu rendezetlen lista */
+  #egeszsegul {
+    list-style-type: none;
+    margin-left: 500px;
+    margin-right: 500px;
+    overflow: hidden;
+    background-color:orange;
+    text-align: center;
+  }
+  /* Egészség menu rendezetlen lista elemei sorba rendezése */
+  #egeszsegli{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+  /* Egészség menu rendezetlen lista elemeinek a linkje */
+  #egeszsegli a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Egészség menu rendezetlen lista elemének hoover-e*/
+  #egeszsegli a:hover {
+    background-color:blue;
+  }
+  /* Kultura menü div-e */
+  #kulturalismenu{
+    margin-left:auto;
+    margin-right: auto;
+  }
+  /* Kultura menu rendezetlen lista */
+  #kulturalisul {
+    list-style-type: none;
+    margin-left: 500px;
+    margin-right: 500px;
+    overflow: hidden;
+    background-color:orange;
+    text-align: center;
+  }
+  /* Kultura menu rendezetlen lista elemei sorba rendezése */
+  #kulturalisli{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+   /* Kultura menu rendezetlen lista elemeinek a linkje */
+  #kulturalisli a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Kultura menu rendezetlen lista elemének hoover-e*/
+  #kulturalisli a:hover {
+    background-color:blue;
+  }
+  
