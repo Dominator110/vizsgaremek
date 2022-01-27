@@ -15,8 +15,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class='nav-item'>
+          <a class='nav-link' href='Fooldal.php'>Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Elérhetőségek</a>
@@ -32,9 +32,15 @@
             <li><a class="dropdown-item" href="#">Gyermek órák</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Regisztrácio</a>
-        </li>
+        <?php
+
+        print("<form method='post'>");
+        print("<li class='nav-item'>");
+        print("<a class='nav-link' href='?m=1'>Regisztrácio</a>");
+        print("</li>");
+
+        print("</form>");
+        ?>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Search">

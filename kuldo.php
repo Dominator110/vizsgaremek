@@ -12,8 +12,8 @@ require("class.phpmailer.php");
 
 class MyMailer extends PHPMailer {
     // Alapértelmezett adatok beállítása
-    var $From     = 'lipak101@gmail.com';//e-mail gmail-os
-    var $FromName = 'Tibor';
+    var $From     = '73159294360@szily.hu';//e-mail gmail-os
+    var $FromName = 'Watchout';
     var $Host     = "ssl://smtp.gmail.com"; //ezt állítsd be
     var $Mailer   = "smtp";                         // Alternative to IsSMTP()
    // var $port = 587;
@@ -32,12 +32,12 @@ class MyMailer extends PHPMailer {
 
 $mail = new MyMailer;
 
-$jelszo="";
+$jelszo="2000-05-17";
 
 $mail->isSMTP();
 
 $mail->SMTPAuth = true; // turn on SMTP authentication
-$mail->Username = "lipak101@gmail.com"; // SMTP username, GMAIL cím
+$mail->Username = "73159294360@szily.hu"; // SMTP username, GMAIL cím
 $mail->Password = $jelszo; // SMTP password
 $mail->Port=465;
 $mail->CharSet = 'UTF-8';
@@ -45,7 +45,7 @@ $cimzett_neve='xy';
 $targy="Itt lesz a targy";
 
 
-$cimzett="lipak101@gmail.com"; //ide jön az az e-mail-cím amire küldje a levelet!
+$cimzett="bakosmik74@gmail.com"; //ide jön az az e-mail-cím amire küldje a levelet!
 
 $mail->AddAddress("$cimzett", "$cimzett_neve");
 //üzenet
