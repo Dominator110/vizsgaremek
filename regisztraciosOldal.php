@@ -36,7 +36,8 @@ User Registration with Email Verification in PHP
 <label for="exampleInputEmail1">Confirm Password</label>
 <input type="password" name="cpassword" class="form-control" id="cpassword" required="">
 </div>   
-<input type="submit" name="password-reset-token" class="btn btn-primary">
+<input type="submit" name="password-reset-token" class="btn btn-primary" value="Register">
+<input type="submit" name="back-to-home" class="btn btn-secodary" value="Back">
 </form>
 </div>
 </div>
