@@ -16,26 +16,24 @@
               if(isset($_GET["m"])==1)
               {
                 ?>
+                
                 <?php
-                  include('regisztraciosOldal.php')
-                  ?>
-                <?php
-              }
+              } 
         ?>
     </header>
     <!-- hatter -->
       <div class="container">
         <div class="box"><a href="#">
           <img src="kepek/fora.jpg"></a>
-            <span>Férfikarórák</span>
+            <span>For Men</span>
         </div>
         <div class="box"><a href="#">
         <img src="kepek/nora.jpg"></a>
-          <span>Nőiórák</span>
+          <span>For Women</span>
         </div>
         <div class="box"><a href="#">
         <img src="kepek/gyora.jpg"></a>
-          <span>Gyerekóra</span>
+          <span>For Children</span>
         </div>
       </div>
     <?php
