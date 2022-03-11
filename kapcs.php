@@ -1,9 +1,22 @@
 <?php
-$con = mysqli_connect("localhost","root","","webshop");
-
-
-if (mysqli_connect_errno())
-  {
-  echo "Hiba az adatbázishoz való csatlakozáskor: " . mysqli_connect_error();
-  }
+    $servername='localhost';
+    $username='root';
+    $password='';
+    $dbname = "pdb";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+        if(!$conn){
+            die('Could not Connect MySql Server:' .mysql_error());
+        }
 ?>
+<!-- adatbázis elkészítése -->
+<!-- CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  `email_verification_link` varchar(255) NOT NULL,
+  `email_verified_at` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1; -->
