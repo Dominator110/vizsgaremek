@@ -3,44 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="fooldal.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 <body>
-    <header>
-        <?php
-            include('Navbar.php');
+        <nav class="navbar"></nav>
 
-              if(isset($_GET["m"])==1)
-              {
-                ?>
-                <?php
-                  include('regisztraciosOldal.php');
-                  ?>
-                <?php
-              }
-        ?>
-    </header>
-    <?php
-        // if(isset($_GET["m"])==0)
-        // {
-        //   include('Fooldaltartalma.php');
-        // }
-        if(isset($_GET["j"])==8)
-        {
-          include('Ferfiora_termekek.php');
-       }
+        <header class="hero-section">
 
-     //include('Feltolt.php');
-    ?>
+        </header>
 
-      <footer>
-        <?php
-        include('Footer.php');
-        ?>
-      </footer>
-    <script src="js/bootstrap.js"></script>
+        <script src="home.js"></script>
 </body>
 </html>

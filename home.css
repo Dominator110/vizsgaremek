@@ -1,0 +1,9 @@
+
+.hero-section{
+    width: 100%;
+    background: url("kepek/background.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
