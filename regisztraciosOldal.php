@@ -1,68 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>User Registration with Email Verification in PHP</title>
-<!-- CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>User Registration with Email Verification in PHP</title>
+        <!-- CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <?php
-    error_reporting(0);
-    include('Navbar.php');
-    
-    if(!isset($_POST['password-reset-token'])){
-    print("<div class='container mt-5'>");
-    print("<div class='card'>");
-    print("<div class='card-header text-center'>");
-    print("Regisztráció");
-    print("</div>");
-
-    print("<div class='card-body'>");
-    print("<form method='post'>");
-    print("<div class='form-group'>");
-    print("<label for='exampleInputEmail1'>Name</label>");
-    print("<input type='text' name='name' class='form-control' id='name' required=''>");
-    print("</div>");
-
-    print("<div class='form-group'>");
-    print("<label for='exampleInputEmail1'>Email address</label>");
-    print("<input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp' required=''>");
-    print("<small id='emailHelp' class='form-text text-muted'>We'll never share your email with anyone else.</small>");
-    print("</div>");
-
-    print("<div class='form-group'>");
-    print("<label for='exampleInputEmail1'>Password</label>");
-    print("<input type='password' name='password' class='form-control' id='password' required=''>");
-    print("</div>");
-
-    print("<div class='form-group'>");
-    print("<label for='exampleInputEmail1'>Confirm Password</label>");
-    print("<input type='password' name='cpassword' class='form-control' id='cpassword' required=''>");
-    print("</div>");   
-    print("<input type='submit' name='password-reset-token' class='btn btn-primary' value='Register'>");
-    print("</form>");
-    }
-    include('Footer.php');
-    require("kapcs.php");
-
-    $username = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $secure_pass = md5($password);
-    
-    if(isset($_POST['password-reset-token'])){
-        $query = "INSERT INTO felhasznalo (Felh_nev, jelszo, email) VALUES ('$username','$secure_pass','$email')";
-    }
-    mysqli_query($con, $query) or die ('Hiba az adatbevitelnél!');
-
-    
+        error_reporting(0);
     ?>
-    
-    
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        User Registration with Email Verification in PHP
+                    </div>
 
-</form>
+        <div class="card-body">
+            <form action="store-registration-send-email.php" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+                <input type="text" name="name" class="form-control" id="name" required="">
+        </div>      
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required="">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+                <input type="password" name="password" class="form-control" id="password" required="">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Confirm Password</label>
+                <input type="password" name="cpassword" class="form-control" id="cpassword" required="">
+        </div>   
+            <input type="submit" name="password-reset-token" class="btn btn-primary" value="Register">
+            <input type="submit" name="back-to-home" class="btn btn-secodary" value="Back">
+
+
+        </form>
 </div>
 </div>
 </div>
