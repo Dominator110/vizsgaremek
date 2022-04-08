@@ -45,20 +45,29 @@
     $jelszo = $_POST['password'];
     $secure_pass = md5($jelszo);
 
-    if(isset($_POST['login']))
-    {
-        $query = "SELECT * FROM felhasznalo WHERE Felh_nev='$username' AND jelszo='$secure_pass'";
+    if(isset($_POST['login'])){
+        Login();
     }
-    $results = mysqli_query($con, $query);
 
-    if(mysqli_num_rows($results) > 0)
-    {
-        print("<a href='Fooldal.php'>Sikeres belépés</a>");
+    function Login(){
+    
+        $query = "SELECT * FROM felhasznalo WHERE Felh_nev=\"".$GLOBALS['username']."\" AND jelszo=\"".$GLOBALS['secure_pass']."\"";
+
+        $results = mysqli_query($GLOBALS['con'], $query);
+
+        if(mysqli_num_rows($results) > 0)
+        {
+            print("<a href='Fooldal.php'>Sikeres belépés</a>");
+        }
+        else
+        {
+            print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
+        }
     }
-    else
-    {
-        print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
-    }
+
+    
+    
+    
     include('Footer.php');
     ?>
 </body>
