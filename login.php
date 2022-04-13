@@ -51,6 +51,7 @@
 
     function Login(){
     
+        $_SESSION['login'] = false;
         $query = "SELECT * FROM felhasznalo WHERE Felh_nev=\"".$GLOBALS['username']."\" AND jelszo=\"".$GLOBALS['secure_pass']."\"";
 
         $results = mysqli_query($GLOBALS['con'], $query);
@@ -58,6 +59,7 @@
         if(mysqli_num_rows($results) > 0)
         {
             print("<a href='Fooldal.php'>Sikeres belépés</a>");
+            $_SESSION['login'] = true;
         }
         else
         {
@@ -65,7 +67,6 @@
         }
     }
 
-    
     
     
     include('Footer.php');
