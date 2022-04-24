@@ -28,9 +28,9 @@
           </a>
           <ul class="dropdown-menu bg-dark  dropdown-menu-dark" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="Ferfiorak">Férfi órák</a></li>
-            <li><a class="dropdown-item" href="#">Női órák</a></li>
+            <li><a class="dropdown-item" href="Noiorak">Női órák</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Gyermek órák</a></li>
+            <li><a class="dropdown-item" href="Gyerekorak">Gyermek órák</a></li>
           </ul>
         </li>
         <?php

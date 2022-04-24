@@ -5,6 +5,8 @@
 
   RewriteRule ^regisztracio$ index.php?m=1 [QSA]
   RewriteRule ^Ferfiorak$ index.php?m=2 [QSA]
+  RewriteRule ^Noiorak$ index.php?m=3 [QSA]
+  RewriteRule ^Gyerekorak$ index.php?m=4 [QSA]
 
 
 </IfModule>

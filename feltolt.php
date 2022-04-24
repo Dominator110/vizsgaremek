@@ -107,11 +107,11 @@ else
                 }
                 else if($_POST["Neme"]=="noi")
                 {
-                  $query = "INSERT INTO noi_ora (Noi_ora_nev,Noi_ora_marka,Noi_ora_szin,Noi_ora_leiras,Noi_ora_keszlet,Noi_ora_ar,Noi_ora_kep) VALUES ('$nev','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
+                  $query = "INSERT INTO noi_ora (Noi_ora_tipus_id,Noi_ora_nev,Noi_ora_tipus,Noi_ora_marka,Noi_ora_szin,Noi_ora_leiras,Noi_ora_keszlet,Noi_ora_ar,Noi_ora_kep) VALUES ('$tipus_id','$nev','$tipus','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
                 }
                 else
                 {
-                  $query = "INSERT INTO gyermek_ora (Gyermek_ora_nev,Gyermek_ora_marka,Gyermek_ora_szin,Gyermek_ora_leiras,Gyermek_ora_keszlet,Gyermek_ora_ar,Gyermek_ora_kep) VALUES ('$nev','$marka','$szin','$leiras''$keszlet','$ar','$kep')";
+                  $query = "INSERT INTO gyermek_ora (Gyermek_ora_tipus_id,Gyermek_ora_nev,Gyermek_ora_tipus,Gyermek_ora_marka,Gyermek_ora_szin,Gyermek_ora_leiras,Gyermek_ora_keszlet,Gyermek_ora_ar,Gyermek_ora_kep) VALUES ('$tipus_id','$nev','$tipus','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
                 }
                 mysqli_query($con,$query) or die ('Hiba az adatbevitelnél!');
 

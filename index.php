@@ -37,7 +37,17 @@
           include('termekek.php');
        }
 
-    //  include('Feltolt.php');
+       if(isset($_GET["m"]) && $_GET["m"] == 3)
+       {
+         include('noi-termekek.php');
+      }
+      if(isset($_GET["m"]) && $_GET["m"] == 4)
+      {
+        include('gyerek-termekek.php');
+     }
+
+
+     // include('Feltolt.php');
     ?>
 
       <footer>

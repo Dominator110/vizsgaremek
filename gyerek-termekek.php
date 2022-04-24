@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funda of Web IT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
 
 </head>
 <body>
@@ -18,17 +17,17 @@
                 <form action="" method="GET">
                     <div class="card filter shadow mt-3">
                         <div class="card-header">
-                            <h5>Filter 
-                                <button type="submit" class="btn btn-primary btn-sm float-end">Search</button>
+                            <h5>szürő 
+                                <button type="submit" class="btn btn-primary btn-sm float-end">Keresés</button>
                             </h5>
                         </div>
                         <div class="card-body">
-                            <h6>Brand List</h6>
+                            <h6>Kategoriák</h6>
                             <hr>
                             <?php
                                 $con = mysqli_connect("localhost","root","","webshop");
 
-                                $brand_query = "SELECT * FROM ferfi_ora GROUP BY Ferfi_ora_tipus";
+                                $brand_query = "SELECT * FROM gyermek_ora GROUP BY Gyermek_ora_tipus";
                                 $brand_query_run  = mysqli_query($con, $brand_query);
 
                                 if(mysqli_num_rows($brand_query_run) > 0)
@@ -42,10 +41,10 @@
                                         }
                                         ?>
                                             <div>
-                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['Ferfi_ora_tipus_id']; ?>" 
-                                                    <?php if(in_array($brandlist['Ferfi_ora_tipus_id'], $checked)){ echo "checked"; } ?>
+                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['Gyermek_ora_tipus_id']; ?>" 
+                                                    <?php if(in_array($brandlist['Gyermek_ora_tipus_id'], $checked)){ echo "checked"; } ?>
                                                  />
-                                                <?= $brandlist['Ferfi_ora_tipus']; ?>
+                                                <?= $brandlist['Gyermek_ora_tipus']; ?>
                                             </div>
                                         <?php
                                     }
@@ -72,7 +71,7 @@
                                 foreach($branchecked as $rowbrand)
                                 {
                                     // echo $rowbrand;
-                                    $products = "SELECT * FROM ferfi_ora WHERE Ferfi_ora_tipus_id IN ($rowbrand) ";
+                                    $products = "SELECT * FROM gyermek_ora WHERE Gyermek_ora_tipus_id IN ($rowbrand) ";
                                     $products_run = mysqli_query($con, $products);
                                     if(mysqli_num_rows($products_run) > 0)
                                     {
@@ -81,11 +80,11 @@
                                             <div class="col-sm-3 col-md-6 col-lg-4">
 							                        <div class="card">
 								                        <div class="card-body text-center">
-									                            <img src=<?= $proditems['Ferfi_ora_kep']; ?> class="product-image">
-                                                                <h5 class="card-title"><b><?= $proditems['Ferfi_ora_marka']; ?></b></h5>
-									                        <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
-									                        <p class="card-text small"><?= $proditems['Ferfi_ora_leiras']; ?></p>
-									                        <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
+									                            <img src=<?= $proditems['gyermek_ora_kep']; ?> class="product-image">
+                                                                <h5 class="card-title"><b><?= $proditems['Gyermek_ora_marka']; ?></b></h5>
+									                        <h5 class="card-title"><b><?= $proditems['Gyermek_ora_nev']; ?></b></h5>
+									                        <p class="card-text small"><?= $proditems['Gyermek_ora_leiras']; ?></p>
+									                        <p class="tags"><?= $proditems['Gyermek_ora_ar']; ?>Ft</p>
 									                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
 								                        </div>
 							                        </div>
@@ -97,7 +96,7 @@
                             }
                             else
                             {
-                                $products = "SELECT * FROM ferfi_ora";
+                                $products = "SELECT * FROM gyermek_ora";
                                 $products_run = mysqli_query($con, $products);
                                 if(mysqli_num_rows($products_run) > 0)
                                 {
@@ -106,10 +105,10 @@
                                         <div class="col-sm-3 col-md-6 col-lg-4">
 							                    <div class="card">
 								                    <div class="card-body text-center">
-									                        <img src=<?= $proditems['Ferfi_ora_kep']; ?> class="product-image">
-									                    <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
-									                    <p class="card-text small"><?= $proditems['Ferfi_ora_leiras'];?></p>
-									                    <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
+									                        <img src=<?= $proditems['gyermek_ora_kep']; ?> class="product-image">
+									                    <h5 class="card-title"><b><?= $proditems['Gyermek_ora_nev']; ?></b></h5>
+									                    <p class="card-text small"><?= $proditems['Gyermek_ora_leiras'];?></p>
+									                    <p class="tags"><?= $proditems['Gyermek_ora_ar']; ?>Ft</p>
                                                         <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
 								                        </div>
 							                        </div>
