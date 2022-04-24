@@ -1,5 +1,5 @@
 <?php
-        print("<div class='container'>");
+        print("<div class='tarolo'>");
           print("<div class='box'><a href='Ferfiorak'>");
             print("<img src='kepek/fora.jpg'></a>");
               print("<span>Férfikarórák</span>");
@@ -13,4 +13,4 @@
             print("<span>Gyerekóra</span>");
         print("</div>");
       print("</div>");
-?>
+?>  

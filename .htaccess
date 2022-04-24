@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>  
+  RewriteEngine on  
+  RewriteCond %{REQUEST_FILENAME} !-f  
+  RewriteCond %{REQUEST_FILENAME} !-d 
+
+  RewriteRule ^regisztracio$ index.php?m=1 [QSA]
+  RewriteRule ^Ferfiorak$ index.php?m=2 [QSA]
+
+
+</IfModule>
