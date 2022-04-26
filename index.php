@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="fooldal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
 </head>
 <body>
     <header>
@@ -21,7 +20,6 @@
               {
                 ?>
                 <?php
-
                 include('Fooldaltartalma.php');
                 include('slider.php');
                   ?>
