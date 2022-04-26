@@ -52,10 +52,19 @@
     $password = $_POST['password'];
     $secure_pass = md5($password);
     
-    if(isset($_POST['password-reset-token'])){
-        $query = "INSERT INTO felhasznalo (Felh_nev, jelszo, email) VALUES ('$username','$secure_pass','$email')";
-    }
-    mysqli_query($con, $query) or die ('Hiba az adatbevitelnél!');
+    $CheckSameName = "SELECT * FROM felhasznalo WHERE Felh_nev=\"".$GLOBALS['username']."\"";
+    $result = mysqli_query($GLOBALS['con'], $CheckSameName);
+
+    if(mysqli_num_rows($result) > 0)
+        {
+            print("<a href='regisztraciosOldal.php'>Már létezik ilyen felhasználó</a>");
+        }
+        else
+        {
+            $query = "INSERT INTO felhasznalo (Felh_nev, jelszo, email) VALUES ('$username','$secure_pass','$email')";
+            print("<a href='login.php'>Sikeres regisztráció</a>");
+        }     
+        mysqli_query($con, $query) or die ('Hiba az adatbevitelnél!');
 
     
     ?>

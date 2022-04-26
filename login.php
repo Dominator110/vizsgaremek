@@ -47,6 +47,7 @@
 
     if(isset($_POST['login'])){
         Login();
+        
     }
 
     function Login(){
