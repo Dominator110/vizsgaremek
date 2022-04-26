@@ -86,7 +86,7 @@
 									                        <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
 									                        <p class="card-text small"><?= $proditems['Ferfi_ora_leiras']; ?></p>
 									                        <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-									                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+									                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-primary'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
@@ -110,7 +110,7 @@
 									                    <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
 									                    <p class="card-text small"><?= $proditems['Ferfi_ora_leiras'];?></p>
 									                    <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-                                                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                                                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-primary'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
