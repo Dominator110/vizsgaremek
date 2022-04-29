@@ -10,7 +10,6 @@
 <body>
     <?php
     error_reporting(0);
-    include('Navbar.php');
     
     if(!isset($_POST['password-reset-token'])){
     print("<div class='container mt-5'>");
@@ -44,7 +43,6 @@
     print("<input type='submit' name='password-reset-token' class='btn btn-primary' value='Register'>");
     print("</form>");
     }
-    include('Footer.php');
     require("kapcs.php");
 
     $username = $_POST['name'];
@@ -57,12 +55,12 @@
 
     if(mysqli_num_rows($result) > 0)
         {
-            print("<a href='regisztraciosOldal.php'>Már létezik ilyen felhasználó</a>");
+            print("<a href='regisztracio'>Már létezik ilyen felhasználó</a>");
         }
         else
         {
             $query = "INSERT INTO felhasznalo (Felh_nev, jelszo, email) VALUES ('$username','$secure_pass','$email')";
-            print("<a href='login.php'>Sikeres regisztráció</a>");
+            print("<a href='bejelentkezes'>Sikeres regisztráció</a>");
         }     
         mysqli_query($con, $query) or die ('Hiba az adatbevitelnél!');
 

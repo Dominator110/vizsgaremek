@@ -11,7 +11,6 @@
     <?php
     session_start();
     error_reporting(0);
-    include('Navbar.php');
     if(!isset($_POST['login']))
     {
     ?>
@@ -45,32 +44,20 @@
     $jelszo = $_POST['password'];
     $secure_pass = md5($jelszo);
 
-    if(isset($_POST['login'])){
-        Login();
-        
+    if(isset($_POST['login']))
+    {
+        $query = "SELECT * FROM felhasznalo WHERE Felh_nev='$username' AND jelszo='$secure_pass'";
     }
+    $results = mysqli_query($con, $query);
 
-    function Login(){
-    
-        $_SESSION['login'] = false;
-        $query = "SELECT * FROM felhasznalo WHERE Felh_nev=\"".$GLOBALS['username']."\" AND jelszo=\"".$GLOBALS['secure_pass']."\"";
-
-        $results = mysqli_query($GLOBALS['con'], $query);
-
-        if(mysqli_num_rows($results) > 0)
-        {
-            print("<a href='Fooldal.php'>Sikeres belépés</a>");
-            $_SESSION['login'] = true;
-        }
-        else
-        {
-            print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
-        }
+    if(mysqli_num_rows($results) > 0)
+    {
+        print("<a href='/'>Sikeres belépés</a>");
     }
-
-    
-    
-    include('Footer.php');
+    else
+    {
+        print("<a href='bejelentkezes'>Nem létezik ilyen felhasználó!</a>");
+    }
     ?>
 </body>
 </html>

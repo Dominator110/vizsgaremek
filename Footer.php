@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
 <a></a>
     <script sec="js/bootstrap.js"></script>
 </body>
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-dk-start bg-dark text-muted">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -20,7 +20,6 @@
       <span>Get connected with us on social networks:</span>
     </div>
     <!-- Left -->
-
     <!-- Right -->
     <div>
       <a href="" class="me-4 text-reset">
@@ -45,7 +44,6 @@
     <!-- Right -->
   </section>
   <!-- Section: Social media -->
-
   <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
@@ -63,7 +61,6 @@
           </p>
         </div>
         <!-- Grid column -->
-
         <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
@@ -84,7 +81,6 @@
           </p>
         </div>
         <!-- Grid column -->
-
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
@@ -105,7 +101,6 @@
           </p>
         </div>
         <!-- Grid column -->
-
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
@@ -126,11 +121,10 @@
     </div>
   </section>
   <!-- Section: Links  -->
-
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Firstclass.com</a>
   </div>
   <!-- Copyright -->
 </footer>
