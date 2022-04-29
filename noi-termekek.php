@@ -86,7 +86,7 @@
 									                        <h5 class="card-title"><b><?= $proditems['Noi_ora_nev']; ?></b></h5>
 									                        <p class="card-text small"><?= $proditems['Noi_ora_leiras']; ?></p>
 									                        <p class="tags"><?= $proditems['Noi_ora_ar']; ?>Ft</p>
-									                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                                                            <?php print("<a href='bovebben.php?a=".$proditems['Noi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
@@ -103,14 +103,15 @@
                                 {
                                     foreach($products_run as $proditems) :
                                         ?>
-                                        <div class="col-sm-3 col-md-6 col-lg-4">
+                                         <div class="col-sm-3 col-md-6 col-lg-4">
 							                    <div class="card">
 								                    <div class="card-body text-center">
 									                        <img src=<?= $proditems['Noi_ora_kep']; ?> class="product-image">
+                                                            <h5 class="card-title"><b><?= $proditems['Noi_ora_marka']; ?></b></h5>
 									                    <h5 class="card-title"><b><?= $proditems['Noi_ora_nev']; ?></b></h5>
 									                    <p class="card-text small"><?= $proditems['Noi_ora_leiras'];?></p>
 									                    <p class="tags"><?= $proditems['Noi_ora_ar']; ?>Ft</p>
-                                                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                                                        <?php print("<a href='bovebben.php?a=".$proditems['Noi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>

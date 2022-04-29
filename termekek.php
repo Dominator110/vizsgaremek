@@ -18,12 +18,12 @@
                 <form action="" method="GET">
                     <div class="card filter shadow mt-3">
                         <div class="card-header">
-                            <h5>Filter 
+                            <h5>Szűrő
                                 <button type="submit" class="btn btn-primary btn-sm float-end">Search</button>
                             </h5>
                         </div>
                         <div class="card-body">
-                            <h6>Brand List</h6>
+                            <h6>Kategoriák</h6>
                             <hr>
                             <?php
                                 $con = mysqli_connect("localhost","root","","webshop");
@@ -86,7 +86,7 @@
 									                        <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
 									                        <p class="card-text small"><?= $proditems['Ferfi_ora_leiras']; ?></p>
 									                        <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-									                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-primary'>Bővebben</a>")?>
+									                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
@@ -110,7 +110,7 @@
 									                    <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
 									                    <p class="card-text small"><?= $proditems['Ferfi_ora_leiras'];?></p>
 									                    <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-                                                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-primary'>Bővebben</a>")?>
+                                                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>

@@ -11,7 +11,6 @@
     <?php
     session_start();
     error_reporting(0);
-    include('Navbar.php');
     if(!isset($_POST['login']))
     {
     ?>
@@ -53,13 +52,12 @@
 
     if(mysqli_num_rows($results) > 0)
     {
-        print("<a href='Fooldal.php'>Sikeres belépés</a>");
+        print("<a href='/'>Sikeres belépés</a>");
     }
     else
     {
-        print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
+        print("<a href='bejelentkezes'>Nem létezik ilyen felhasználó!</a>");
     }
-    include('Footer.php');
     ?>
 </body>
 </html>

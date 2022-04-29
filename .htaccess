@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>  
+  RewriteEngine on  
+  RewriteCond %{REQUEST_FILENAME} !-f  
+  RewriteCond %{REQUEST_FILENAME} !-d 
+
+  RewriteRule ^regisztracio$ index.php?m=1 [QSA]
+  RewriteRule ^Ferfiorak$ index.php?m=2 [QSA]
+  RewriteRule ^Noiorak$ index.php?m=3 [QSA]
+  RewriteRule ^Gyerekorak$ index.php?m=4 [QSA]
+  RewriteRule ^bejelentkezes$ index.php?m=5 [QSA]
+  RewriteRule ^Admin$ index.php?m=6 [QSA]
+
+
+</IfModule>

@@ -1,0 +1,63 @@
+
+.height {
+    height: 120vh
+}
+
+.card {
+    width: 1050px;
+    height: 700px
+}
+
+.image {
+    position: absolute;
+    right: 12px;
+    top: 10px
+}
+
+p{
+    font-size: 25px;
+}
+
+.main-heading {
+    font-size: 40px;
+    color: red !important
+}
+
+h5,h6{
+    padding: 10px;
+}
+
+.user-ratings h6 {
+    margin-top: 2px
+}
+
+.colors {
+    display: flex;
+    margin-top: 2px
+}
+
+.colors span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    margin-right: 6px
+}
+
+.btn-danger {
+    height: 48px;
+    font-size: 18px
+}
+@media screen and (max-width: 600px) {
+    .card {
+        height: 800px
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .main-heading {
+        font-size: 25px;
+        color: red !important
+    }
+  }

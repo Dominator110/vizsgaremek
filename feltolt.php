@@ -15,6 +15,7 @@ if(!isset($_POST['gomb'])){
     print("Márka: <input type='text' name='marka'><br>");
     print("Szín: <input type='text' name='szin'><br>");
     print("Termék tipus: <input type='text' name='tipus'><br>");
+    print("Ajánlatunk-e <input type='text' name='ajanlat'><br>");
     print("Tipus iD: <input type='number' name='tipus_id'><br>");
     print("Készlet: <input type='number' name='keszlet'><br>");
     print("Ár: <input type='number' name='ar'><br>");
@@ -30,6 +31,7 @@ if(!isset($_POST['gomb'])){
     <?php
 
     print("Leiras: <input type='textbox' name='leiras'><br>");
+    print("Bővebb leírás: <textarea name='leiras2' rows='5' cols='50'></textarea><br>");
     print("Kép: <input type='file' name='kep' ><br>");
     print("<br><input type='submit' name='gomb' value='Rögzítés'><br>");
     
@@ -49,6 +51,8 @@ else
     $keszlet = $_POST['keszlet'];
     $ar = $_POST['ar'];
     $leiras = $_POST['leiras'];
+    $leiras2 = $_POST['leiras2'];
+    $ajanlat = $_POST['ajanlat'];
    
 
     
@@ -103,15 +107,15 @@ else
 
                 if($_POST["Neme"]=="ferfi")
                 {
-                $query = "INSERT INTO ferfi_ora (Ferfi_ora_tipus_id,Ferfi_ora_nev,Ferfi_ora_tipus,Ferfi_ora_marka,Ferfi_ora_szin,Ferfi_ora_leiras,Ferfi_ora_keszlet,Ferfi_ora_ar,Ferfi_ora_kep) VALUES ('$tipus_id','$nev','$tipus','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
+                $query = "INSERT INTO ferfi_ora (Ferfi_ora_tipus_id,ajanlatunk,Ferfi_ora_nev,Ferfi_ora_tipus,Ferfi_ora_marka,Ferfi_ora_ar,Ferfi_ora_szin,Ferfi_ora_leiras,Ferfi_ora_leiras2,Ferfi_ora_keszlet,Ferfi_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
                 }
                 else if($_POST["Neme"]=="noi")
                 {
-                  $query = "INSERT INTO noi_ora (Noi_ora_tipus_id,Noi_ora_nev,Noi_ora_tipus,Noi_ora_marka,Noi_ora_szin,Noi_ora_leiras,Noi_ora_keszlet,Noi_ora_ar,Noi_ora_kep) VALUES ('$tipus_id','$nev','$tipus','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
+                  $query = "INSERT INTO noi_ora (Noi_ora_tipus_id,ajanlatunk,Noi_ora_nev,Noi_ora_tipus,Noi_ora_marka,Noi_ora_ar,Noi_ora_szin,Noi_ora_leiras,Noi_ora_leiras2,Noi_ora_keszlet,Noi_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
                 }
                 else
                 {
-                  $query = "INSERT INTO gyermek_ora (Gyermek_ora_tipus_id,Gyermek_ora_nev,Gyermek_ora_tipus,Gyermek_ora_marka,Gyermek_ora_szin,Gyermek_ora_leiras,Gyermek_ora_keszlet,Gyermek_ora_ar,Gyermek_ora_kep) VALUES ('$tipus_id','$nev','$tipus','$marka','$szin','$leiras','$keszlet','$ar','$kep')";
+                  $query = "INSERT INTO gyermek_ora (Gyermek_ora_tipus_id,ajanlatunk,Gyermek_ora_nev,Gyermek_ora_tipus,Gyermek_ora_marka,Gyermek_ora_ar,Gyermek_ora_szin,Gyermek_ora_leiras,Gyermek_ora_leiras2,Gyermek_ora_keszlet,Gyermek_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
                 }
                 mysqli_query($con,$query) or die ('Hiba az adatbevitelnél!');
 

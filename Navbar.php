@@ -20,9 +20,9 @@
         <li class='nav-item'>
           <a class='nav-link ' href='/'>Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Elérhetőségek</a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Termékek
@@ -42,7 +42,15 @@
         print("</li>");
 
         print("</form>");
+        print("<form method='post'>");
+        print("<li class='nav-item'>");
+        print("<a class='nav-link' href='bejelentkezes'>Bejelentkezés</a>");
+        print("</li>");
+        print("</form>");
         ?>
+                <li class="nav-item">
+          <a class="nav-link" href="Admin">Admin</a>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" name="keywords" placeholder="Keresés" aria-label="Search">
@@ -51,9 +59,7 @@
     </div>
   </div>
 </nav>
-<?php
-include('kereso.php');
-?>
+
 </body>
 </html>
 
