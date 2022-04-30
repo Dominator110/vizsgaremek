@@ -13,8 +13,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `webshop`
 --
-CREATE DATABASE IF NOT EXISTS `anyad` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
-USE `anyad`;
+CREATE DATABASE IF NOT EXISTS `webshop` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `webshop`;
 
 -- --------------------------------------------------------
 
