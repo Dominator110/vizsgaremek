@@ -27,7 +27,7 @@
                             <?php
                                 $con = mysqli_connect("localhost","root","","webshop");
 
-                                $brand_query = "SELECT * FROM gyermek_ora GROUP BY Gyermek_ora_tipus";
+                                $brand_query = "SELECT * FROM gyermek_ora_view GROUP BY gyermek_ora_tipus";
                                 $brand_query_run  = mysqli_query($con, $brand_query);
 
                                 if(mysqli_num_rows($brand_query_run) > 0)
@@ -41,10 +41,10 @@
                                         }
                                         ?>
                                             <div>
-                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['Gyermek_ora_tipus_id']; ?>" 
-                                                    <?php if(in_array($brandlist['Gyermek_ora_tipus_id'], $checked)){ echo "checked"; } ?>
+                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['gyermek_ora_tipus_id']; ?>" 
+                                                    <?php if(in_array($brandlist['gyermek_ora_tipus_id'], $checked)){ echo "checked"; } ?>
                                                  />
-                                                <?= $brandlist['Gyermek_ora_tipus']; ?>
+                                                <?= $brandlist['gyermek_ora_tipus']; ?>
                                             </div>
                                         <?php
                                     }
@@ -71,7 +71,7 @@
                                 foreach($branchecked as $rowbrand)
                                 {
                                     // echo $rowbrand;
-                                    $products = "SELECT * FROM gyermek_ora WHERE Gyermek_ora_tipus_id IN ($rowbrand) ";
+                                    $products = "SELECT * FROM gyermek_ora_view WHERE gyermek_ora_tipus_id IN ($rowbrand) ";
                                     $products_run = mysqli_query($con, $products);
                                     if(mysqli_num_rows($products_run) > 0)
                                     {
@@ -81,11 +81,11 @@
 							                        <div class="card">
 								                        <div class="card-body text-center">
 									                            <img src=<?= $proditems['gyermek_ora_kep']; ?> class="product-image">
-                                                                <h5 class="card-title"><b><?= $proditems['Gyermek_ora_marka']; ?></b></h5>
-									                        <h5 class="card-title"><b><?= $proditems['Gyermek_ora_nev']; ?></b></h5>
-									                        <p class="card-text small"><?= $proditems['Gyermek_ora_leiras']; ?></p>
-									                        <p class="tags"><?= $proditems['Gyermek_ora_ar']; ?>Ft</p>
-									                        <?php print("<a href='bovebben.php?j=".$proditems['Gyermek_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
+                                                                <h5 class="card-title"><b><?= $proditems['gyermek_ora_marka']; ?></b></h5>
+									                        <h5 class="card-title"><b><?= $proditems['gyermek_ora_nev']; ?></b></h5>
+									                        <p class="card-text small"><?= $proditems['gyermek_ora_leiras']; ?></p>
+									                        <p class="tags"><?= $proditems['gyermek_ora_ar']; ?>Ft</p>
+									                        <?php print("<a href='bovebben.php?m=".$proditems['termek_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
@@ -96,7 +96,7 @@
                             }
                             else
                             {
-                                $products = "SELECT * FROM gyermek_ora";
+                                $products = "SELECT * FROM gyermek_ora_view";
                                 $products_run = mysqli_query($con, $products);
                                 if(mysqli_num_rows($products_run) > 0)
                                 {
@@ -106,10 +106,10 @@
 							                    <div class="card">
 								                    <div class="card-body text-center">
 									                        <img src=<?= $proditems['gyermek_ora_kep']; ?> class="product-image">
-									                    <h5 class="card-title"><b><?= $proditems['Gyermek_ora_nev']; ?></b></h5>
-									                    <p class="card-text small"><?= $proditems['Gyermek_ora_leiras'];?></p>
-									                    <p class="tags"><?= $proditems['Gyermek_ora_ar']; ?>Ft</p>
-                                                        <?php print("<a href='bovebben.php?j=".$proditems['Gyermek_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
+									                    <h5 class="card-title"><b><?= $proditems['gyermek_ora_nev']; ?></b></h5>
+									                    <p class="card-text small"><?= $proditems['gyermek_ora_leiras'];?></p>
+									                    <p class="tags"><?= $proditems['gyermek_ora_ar']; ?>Ft</p>
+                                                        <?php print("<a href='bovebben.php?m=".$proditems['termek_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>

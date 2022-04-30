@@ -35,23 +35,57 @@
           </ul>
         </li>
         <?php
+        
         error_reporting(0);
-        print("<form method='post'>");
-        print("<li class='nav-item'>");
-        print("<a class='nav-link' href='regisztracio'>Regisztrácio</a>");
-        print("</li>");
 
-        print("</form>");
-        print("<form method='post'>");
-        print("<li class='nav-item'>");
-        print("<a class='nav-link' href='bejelentkezes'>Bejelentkezés</a>");
-        print("</li>");
-        print("</form>");
+        if(!isset( $_SESSION['felh_id'] )){
+          print("<form method='post'>");
+          print("<li class='nav-item'>");
+          print("<a class='nav-link' href='regisztracio'>Regisztrácio</a>");
+          print("</li>");
+          print("</form>");
+
+          print("<form method='post'>");
+          print("<li class='nav-item'>");
+          print("<a class='nav-link' href='bejelentkezes'>Bejelentkezés</a>");
+          print("</li>");
+          print("</form>");
+        }
+        else{
+          print("<form method='post'>");
+          print("<li class='nav-item'>");
+          print("<a class='nav-link' href='Logout.php'>Kijelentkezés</a>");
+          print("</li>");
+          print("</form>");
+
+          print("<form method='post'>");
+          print("<li class='nav-item'>");
+          print("<p class='nav-link'>" . $_SESSION['bejelentkezettNeve'] . "</p>");
+          print("</li>");
+          print("</form>");
+
+          print("<form method='post'>");
+          print("<li class='nav-item'>");
+          print("<a class='nav-link' href='Cart.php'>Kosár</a>");
+          print("</li>");
+          print("</form>");
+        }
+        
+
         ?>
                 <li class="nav-item">
           <a class="nav-link" href="Admin">Admin</a>
         </li>
       </ul>
+      <?php
+      if($_SESSION['name'] != ""){
+        ?>
+        <p class="form-control me-1"><?php echo $_SESSION['bejelentkezettNeve']?><p>
+        <?php
+      }
+      ?>
+      
+
       <form class="d-flex">
         <input class="form-control me-2" type="search" name="keywords" placeholder="Keresés" aria-label="Search">
         <button class="btn btn-outline-success"  type="submit">Keresés</button>

@@ -28,7 +28,7 @@
                             <?php
                                 $con = mysqli_connect("localhost","root","","webshop");
 
-                                $brand_query = "SELECT * FROM ferfi_ora GROUP BY Ferfi_ora_tipus";
+                                $brand_query = "SELECT * FROM ferfi_ora_view GROUP BY ferfi_ora_tipus";
                                 $brand_query_run  = mysqli_query($con, $brand_query);
 
                                 if(mysqli_num_rows($brand_query_run) > 0)
@@ -42,10 +42,10 @@
                                         }
                                         ?>
                                             <div>
-                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['Ferfi_ora_tipus_id']; ?>" 
-                                                    <?php if(in_array($brandlist['Ferfi_ora_tipus_id'], $checked)){ echo "checked"; } ?>
+                                                <input type="checkbox" name="termek[]" value="<?= $brandlist['ferfi_ora_tipus_id']; ?>" 
+                                                    <?php if(in_array($brandlist['ferfi_ora_tipus_id'], $checked)){ echo "checked"; } ?>
                                                  />
-                                                <?= $brandlist['Ferfi_ora_tipus']; ?>
+                                                <?= $brandlist['ferfi_ora_tipus']; ?>
                                             </div>
                                         <?php
                                     }
@@ -72,7 +72,7 @@
                                 foreach($branchecked as $rowbrand)
                                 {
                                     // echo $rowbrand;
-                                    $products = "SELECT * FROM ferfi_ora WHERE Ferfi_ora_tipus_id IN ($rowbrand) ";
+                                    $products = "SELECT * FROM ferfi_ora_view WHERE ferfi_ora_tipus_id IN ($rowbrand) ";
                                     $products_run = mysqli_query($con, $products);
                                     if(mysqli_num_rows($products_run) > 0)
                                     {
@@ -81,12 +81,12 @@
                                             <div class="col-sm-3 col-md-6 col-lg-4">
 							                        <div class="card">
 								                        <div class="card-body text-center">
-									                            <img src=<?= $proditems['Ferfi_ora_kep']; ?> class="product-image">
-                                                                <h5 class="card-title"><b><?= $proditems['Ferfi_ora_marka']; ?></b></h5>
-									                        <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
-									                        <p class="card-text small"><?= $proditems['Ferfi_ora_leiras']; ?></p>
-									                        <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-									                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
+									                            <img src=<?= $proditems['ferfi_ora_kep']; ?> class="product-image">
+                                                                <h5 class="card-title"><b><?= $proditems['ferfi_ora_marka']; ?></b></h5>
+									                        <h5 class="card-title"><b><?= $proditems['ferfi_ora_nev']; ?></b></h5>
+									                        <p class="card-text small"><?= $proditems['ferfi_ora_leiras']; ?></p>
+									                        <p class="tags"><?= $proditems['ferfi_ora_ar']; ?>Ft</p>
+									                        <?php print("<a href='bovebben.php?m=".$proditems['termek_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>
@@ -97,7 +97,7 @@
                             }
                             else
                             {
-                                $products = "SELECT * FROM ferfi_ora";
+                                $products = "SELECT * FROM ferfi_ora_view";
                                 $products_run = mysqli_query($con, $products);
                                 if(mysqli_num_rows($products_run) > 0)
                                 {
@@ -106,11 +106,11 @@
                                         <div class="col-sm-3 col-md-6 col-lg-4">
 							                    <div class="card">
 								                    <div class="card-body text-center">
-									                        <img src=<?= $proditems['Ferfi_ora_kep']; ?> class="product-image">
-									                    <h5 class="card-title"><b><?= $proditems['Ferfi_ora_nev']; ?></b></h5>
-									                    <p class="card-text small"><?= $proditems['Ferfi_ora_leiras'];?></p>
-									                    <p class="tags"><?= $proditems['Ferfi_ora_ar']; ?>Ft</p>
-                                                        <?php print("<a href='bovebben.php?m=".$proditems['Ferfi_ora_id']."' class='btn btn-dark'>Bővebben</a>")?>
+									                        <img src=<?= $proditems['ferfi_ora_kep']; ?> class="product-image">
+									                    <h5 class="card-title"><b><?= $proditems['ferfi_ora_nev']; ?></b></h5>
+									                    <p class="card-text small"><?= $proditems['ferfi_ora_leiras'];?></p>
+									                    <p class="tags"><?= $proditems['ferfi_ora_ar']; ?>Ft</p>
+                                                        <?php print("<a href='bovebben.php?m=".$proditems['termek_id']."' class='btn btn-dark'>Bővebben</a>")?>
 								                        </div>
 							                        </div>
 						                        </div>

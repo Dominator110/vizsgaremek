@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Password</label>
+                        <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" id="password" required="">
                     </div>
 
@@ -37,27 +37,51 @@
     
     <?php
     }
-    require('kapcs.php');
-    
-    $bejelentkezettNeve = $_SESSION['name'];
-    $username = $_POST['name'];
-    $jelszo = $_POST['password'];
-    $secure_pass = md5($jelszo);
-
-    if(isset($_POST['login']))
-    {
-        $query = "SELECT * FROM felhasznalo WHERE Felh_nev='$username' AND jelszo='$secure_pass'";
-    }
-    $results = mysqli_query($con, $query);
-
-    if(mysqli_num_rows($results) > 0)
-    {
-        print("<a href='/'>Sikeres belépés</a>");
-    }
     else
-    {
-        print("<a href='bejelentkezes'>Nem létezik ilyen felhasználó!</a>");
+    {   
+        require('kapcs.php');        
+        
+        $username = $_POST["name"];        
+        $jelszo = $_POST["password"];
+        $secure_pass = md5($jelszo);        
+
+        // if(isset($_POST['login'])){
+            Login();
+        // }    
     }
+
+    function Login(){
+
+        global $username, $jelszo, $secure_pass;
+
+      /*
+        $_SESSION["login"] = true;
+        $_SESSION["bejelentkezettNeve"] = $GLOBALS['username'];        
+        $_SESSION["felh_id"] = 12345678;
+        print("<a href='index.php'>Sikeres belépés</a>");
+      */
+  
+        $_SESSION['login'] = false;
+
+        $query = "SELECT * FROM felhasznalo WHERE Felh_nev=\"".$GLOBALS['username']."\" AND jelszo=\"".$GLOBALS['secure_pass']."\"";
+
+        $results = mysqli_query($GLOBALS['con'], $query);
+
+        if(mysqli_num_rows($results) > 0)
+        {
+            foreach($results as $row) :
+                $_SESSION['login'] = true;
+                $_SESSION['bejelentkezettNeve'] = $username;
+                $_SESSION['felh_id'] = $row['Felh_id'];
+                print("<a href='index.php'>Sikeres belépés</a>");
+            endforeach;
+        }
+        else
+        {
+            print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
+        }             
+    }
+
     ?>
 </body>
 </html>

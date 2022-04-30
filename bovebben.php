@@ -15,7 +15,8 @@
     require("kapcs.php");
     include("Navbar.php");
     //include('kereso.php');
-    $FerfioraID = mysqli_query($con,"SELECT Ferfi_ora_nev,Ferfi_ora_kep,Ferfi_ora_leiras2,Ferfi_ora_marka,Ferfi_ora_ar FROM ferfi_ora WHERE Ferfi_ora_id='".$_GET['m']."';") or die ("Nem sikerült a lekérdezés!");
+    // $FerfioraID = mysqli_query($con,"SELECT Ferfi_ora_nev,Ferfi_ora_kep,Ferfi_ora_leiras2,Ferfi_ora_marka,Ferfi_ora_ar FROM ferfi_ora WHERE Ferfi_ora_id='".$_GET['m']."';") or die ("Nem sikerült a lekérdezés!");
+    $FerfioraID = mysqli_query($con,"SELECT ora_nev Ferfi_ora_nev, ora_kep Ferfi_ora_kep, ora_leiras2 Ferfi_ora_leiras2, ora_marka Ferfi_ora_marka,ora_ar Ferfi_ora_ar, termek_id FROM termek WHERE termek_id='".$_GET['m']."';") or die ("Nem sikerült a lekérdezés!");
     $KivalasztottOldal = $_GET['m'];
     if($FerfioraID->num_rows>0){
     while($row = $FerfioraID->fetch_assoc()){
@@ -43,7 +44,7 @@
                                 </div>
                          </div>
                     <div class="image"> <img src=<?= $row["Ferfi_ora_kep"] ?> width="300"> </div>
-                    <p><?= $row["Ferfi_ora_leiras2"] ?></p> <button class="btn btn-dark">Kosárba</button>
+                    <p><?= $row["Ferfi_ora_leiras2"] ?></p> <?php print("<a href='Cart.php?m=".$row['termek_id']."' class='btn btn-dark'>Kosarba</a>")?>
                     </div>
 
                 </div>
@@ -52,82 +53,7 @@
 
     }}
     ?>
-    <?php
-    $NoioraID = mysqli_query($con,"SELECT Noi_ora_nev,Noi_ora_kep,Noi_ora_leiras2,Noi_ora_marka,Noi_ora_ar FROM noi_ora WHERE Noi_ora_id='".$_GET['a']."';") or die ("Nem sikerült a lekérdezés!");
-    $KivalasztottOldal = $_GET['a'];
-    if($NoioraID->num_rows>0){
-    while($row = $NoioraID->fetch_assoc()){
 
-        $nev2 = $row["Noi_ora_nev"];
-        $leiras2 = $row["Noi_ora_leiras2"];
-        $marka2 = $row["Noi_ora_marka"];
-        $ar2 = $row["Noi_ora_ar"];
-        $kep2 = $row["Noi_ora_kep"];
-        ?>
-            <div class="height d-flex justify-content-center align-items-center">
-                <div class="card p-3">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <div class="mt-2">
-                            <h4 class="text-uppercase">Bővebben</h4>
-                                <div class="mt-5">
-                                <h5 class="text-uppercase mb-0">Név :</h5>
-                                    <h5 class="text-uppercase mb-0"><?= $row["Noi_ora_nev"] ?></h5>
-                                    <h5 class="text-uppercase mb-0">Márka :</h5>
-                                        <h1 class="main-heading mt-0"><?= $row["Noi_ora_marka"] ?></h1>
-                                        <div class="d-flex flex-row user-ratings">
-                                        <h5 class="text-uppercase mb-0">Ár :</h5>
-                                        <h6 class="text-muted ml-1"><?= $row["Noi_ora_ar"] ?>Ft</h6>
-                                        </div>
-                                        <h5 class="text-uppercase mb-0">Leirás :</h5>
-                                </div>
-                         </div>
-                    <div class="image"> <img src=<?= $row["Noi_ora_kep"] ?> width="300"> </div>
-                </div>
-             <p><?= $row["Noi_ora_leiras2"] ?></p> <button class="btn btn-dark">Kosárba</button>
-                </div>
-            </div>
-        <?php
-
-    }}
-    ?>
-        <?php
-    $GyermekoraID = mysqli_query($con,"SELECT Gyermek_ora_nev,gyermek_ora_kep,Gyermek_ora_leiras2,Gyermek_ora_marka,Gyermek_ora_ar FROM gyermek_ora WHERE Gyermek_ora_id='".$_GET['j']."';") or die ("Nem sikerült a lekérdezés!");
-    $KivalasztottOldal = $_GET['j'];
-    if($GyermekoraID->num_rows>0){
-    while($row = $GyermekoraID->fetch_assoc()){
-
-        $nev3 = $row["Gyermek_ora_nev"];
-        $leiras3 = $row["Gyermek_ora_leiras2"];
-        $marka3 = $row["Gyermek_ora_marka"];
-        $ar3 = $row["Gyermek_ora_ar"];
-        $kep3 = $row["gyermek_ora_kep"];
-        ?>
-            <div class="height d-flex justify-content-center align-items-center">
-                <div class="card p-3">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <div class="mt-2">
-                            <h4 class="text-uppercase">Bővebben</h4>
-                                <div class="mt-5">
-                                <h5 class="text-uppercase mb-0">Név :</h5>
-                                    <h5 class="text-uppercase mb-0"><?= $row["Gyermek_ora_nev"] ?></h5>
-                                    <h5 class="text-uppercase mb-0">Márka :</h5>
-                                        <h1 class="main-heading mt-0"><?= $row["Gyermek_ora_marka"] ?></h1>
-                                        <div class="d-flex flex-row user-ratings">
-                                        <h5 class="text-uppercase mb-0">Ár :</h5>
-                                        <h6 class="text-muted ml-1"><?= $row["Gyermek_ora_ar"] ?>Ft</h6>
-                                        </div>
-                                        <h5 class="text-uppercase mb-0">Leirás :</h5>
-                                </div>
-                         </div>
-                    <div class="image"> <img src=<?= $row["gyermek_ora_kep"] ?> height="350" width="200"> </div>
-                </div>
-             <p><?= $row["Gyermek_ora_leiras2"] ?></p> <button class="btn btn-dark">Kosárba</button>
-                </div>
-            </div>
-        <?php
-
-    }}
-    ?>
     <?php
     include('Footer.php');
     ?>

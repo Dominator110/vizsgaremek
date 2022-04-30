@@ -63,12 +63,7 @@
             print("<a href='bejelentkezes'>Sikeres regisztráció</a>");
         }     
         mysqli_query($con, $query) or die ('Hiba az adatbevitelnél!');
-
-    
     ?>
-    
-    
-
 </form>
 </div>
 </div>

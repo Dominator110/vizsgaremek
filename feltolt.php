@@ -105,9 +105,19 @@ else
 
                 $kep = "kepek/".$_FILES["kep"]["name"];
 
-                if($_POST["Neme"]=="ferfi")
+                // if($_POST["Neme"]=="ferfi")
+                $termektipus = 2;
+
+                if($_POST["Neme"]=="noi") {$termektipus = 1; }
+                else 
+                     if($_POST["Neme"]=="ferfi") {$termektipus = 0; }
+
+                  $query = "INSERT INTO termek (ora_tipus_id,ajanlatunk,ora_nev,ora_marka,ora_ar,ora_szin,ora_leiras,ora_leiras2,ora_keszlet,ora_kep,termek_tipus) VALUES ('$tipus_id','$ajanlat','$nev','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep', $termektipus)";
+
+                /*
                 {
-                $query = "INSERT INTO ferfi_ora (Ferfi_ora_tipus_id,ajanlatunk,Ferfi_ora_nev,Ferfi_ora_tipus,Ferfi_ora_marka,Ferfi_ora_ar,Ferfi_ora_szin,Ferfi_ora_leiras,Ferfi_ora_leiras2,Ferfi_ora_keszlet,Ferfi_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
+
+                  $query = "INSERT INTO ferfi_ora (Ferfi_ora_tipus_id,ajanlatunk,Ferfi_ora_nev,Ferfi_ora_tipus,Ferfi_ora_marka,Ferfi_ora_ar,Ferfi_ora_szin,Ferfi_ora_leiras,Ferfi_ora_leiras2,Ferfi_ora_keszlet,Ferfi_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
                 }
                 else if($_POST["Neme"]=="noi")
                 {
@@ -117,6 +127,7 @@ else
                 {
                   $query = "INSERT INTO gyermek_ora (Gyermek_ora_tipus_id,ajanlatunk,Gyermek_ora_nev,Gyermek_ora_tipus,Gyermek_ora_marka,Gyermek_ora_ar,Gyermek_ora_szin,Gyermek_ora_leiras,Gyermek_ora_leiras2,Gyermek_ora_keszlet,Gyermek_ora_kep) VALUES ('$tipus_id','$ajanlat','$nev','$tipus','$marka','$ar','$szin','$leiras','$leiras2','$keszlet','$kep')";
                 }
+                */
                 mysqli_query($con,$query) or die ('Hiba az adatbevitelnél!');
 
                 print("<br>A temék felöltve!");               

@@ -10,9 +10,11 @@
 <body>
     <header>
         <?php
-            include('Navbar.php');
-            include('header.php');
-            include('kereso.php');
+              session_start();
+              include('Navbar.php');
+              include('header.php');
+              include('kereso.php');
+          
 
         ?>
     </header>
