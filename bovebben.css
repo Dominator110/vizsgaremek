@@ -11,7 +11,8 @@
 .image {
     position: absolute;
     right: 12px;
-    top: 10px
+    top: 10px;
+
 }
 
 p{
@@ -51,7 +52,7 @@ h5,h6{
 }
 @media screen and (max-width: 600px) {
     .card {
-        height: 800px
+        height: 950px
     }
   }
 

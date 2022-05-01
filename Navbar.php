@@ -20,9 +20,6 @@
         <li class='nav-item'>
           <a class='nav-link ' href='/'>Home</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Elérhetőségek</a>
-        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Termékek
@@ -69,13 +66,19 @@
           print("<a class='nav-link' href='Cart.php'>Kosár</a>");
           print("</li>");
           print("</form>");
+
+          if( $_SESSION['felh_id'] == 1 || $_SESSION['felh_id'] == 2 ){
+
+            print("<li class='nav-item'>");
+            print("<a class='nav-link' href='Admin'>Admin</a>");
+            print("</li>");
+            }
+
+
         }
-        
+
 
         ?>
-                <li class="nav-item">
-          <a class="nav-link" href="Admin">Admin</a>
-        </li>
       </ul>
       <?php
       if($_SESSION['name'] != ""){

@@ -16,7 +16,7 @@
 
 			if(  isset($_GET['keywords']) && ($_GET['keywords'] != "") )
 			{
-				// $_GET['m']="";
+				 $_GET['m']="";
 				$kulcs = isset($_GET['keywords']) ? '%'.$_GET['keywords'].'%' : '';
 			}
 			$query = "SELECT ora_nev ferfi_ora_nev, ora_kep ferfi_ora_kep, ora_leiras ferfi_ora_leiras, ora_marka ferfi_ora_marka, ora_ar ferfi_ora_ar, case termek_tipus when 0 then 'Ferfiorak' when 1 then 'Noiorak' else 'Gyerekorak' end targetsite FROM termek where ora_nev like cast( '$kulcs' as varchar(30) character set UTF8) /* OR ferfi_ora_tipus like  cast('$kulcs' as varchar(30) character set utf8) */ order by targetsite";

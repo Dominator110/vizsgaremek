@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bovebben.css" rel="stylesheet">
+    <link rel="stylesheet" href="bovebben.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -43,7 +44,7 @@
                                         <h5 class="text-uppercase mb-0">Leirás :</h5>
                                 </div>
                          </div>
-                    <div class="image"> <img src=<?= $row["Ferfi_ora_kep"] ?> width="300"> </div>
+                    <div class="image"> <img src=<?= $row["Ferfi_ora_kep"] ?> width="200" height="300"> </div>
                     <p><?= $row["Ferfi_ora_leiras2"] ?></p> <?php print("<a href='Cart.php?m=".$row['termek_id']."' class='btn btn-dark'>Kosarba</a>")?>
                     </div>
 

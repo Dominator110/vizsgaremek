@@ -28,12 +28,12 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src=<?= $proditems['ora_kep']; ?> class="product-thumb" alt="">
-                                <button class="card-btn">Vásárlás</button>
+                                <?php print("<a href='bovebben.php?m=".$proditems['termek_id']."' class='card-btn'>Bővebben</a>")?>
                             </div>
                             <div class="product-info">
                                 <h2 class="product-brand"><?= $proditems['ora_nev']; ?></b></h2>
                                 <p class="product-short-description"><?= $proditems['ora_leiras']; ?></p>
-                                <span class="price">$20</span><span class="actual-price"><?= $proditems['ora_ar']; ?></span>
+                                <span class="price"><?= $proditems['ora_ar']; ?>HUF</span>
                             </div>
                         </div>
                         <?php

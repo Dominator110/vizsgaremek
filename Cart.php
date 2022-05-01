@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once('kapcs.php');
+    include('Navbar.php');
 
     if ( isset($_GET['m']) && isset($_SESSION['felh_id'] ) ){
 
@@ -40,7 +41,7 @@
                         <div class="product-card">
                             <div class="product-info">
                                 <h2 class="product-brand"><?= $proditems['kosar_nev']; ?></b></h2>
-                                <span class="price">$20</span><span class="actual-price"><?= $proditems['kosar_ar']; ?></span>
+                                <?= $proditems['kosar_ar']; ?>HUF</span>
                                 <a href="kosartorol.php?m=<?= $proditems['kosar_id']; ?>">elem törlése</a> 
                             </div>
                         </div>
@@ -56,4 +57,5 @@
             </html>
 <?php
     }
+    include('Footer.php');
 ?>
