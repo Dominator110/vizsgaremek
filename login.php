@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>User Registration with Email Verification in PHP</title>
 <!-- CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -20,16 +19,16 @@
                 <form method="post">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
+                        <label for="exampleInputEmail1">Felhasználónév </label>
                         <input type="text" name="name" class="form-control" id="name" required="">
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Jelszó</label>
                         <input type="password" name="password" class="form-control" id="password" required="">
                     </div>
 
-                    <input type="submit" name="login" class="btn btn-primary" value="Login">
+                    <input type="submit" name="login" class="btn btn-dark" value="Bejelentkezés">
                 </form>
             </div>
         </div>
@@ -52,7 +51,7 @@
 
     function Login(){
 
-        global $username, $jelszo, $secure_pass;
+        global $username, $jelszo, $secure_pass,$emailkuldo;
 
       /*
         $_SESSION["login"] = true;
@@ -73,12 +72,12 @@
                 $_SESSION['login'] = true;
                 $_SESSION['bejelentkezettNeve'] = $username;
                 $_SESSION['felh_id'] = $row['Felh_id'];
-                print("<a href='index.php'>Sikeres belépés</a>");
+                print("<a href='/'>Sikeres belépés</a>");
             endforeach;
         }
         else
         {
-            print("<a href='login.php'>Nem létezik ilyen felhasználó!</a>");
+            print("<a href='bejelentkezes'>Nem létezik ilyen felhasználó!</a>");
         }             
     }
 

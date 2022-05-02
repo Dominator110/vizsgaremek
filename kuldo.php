@@ -8,6 +8,7 @@
 <body>
 <?php
 require("class.phpmailer.php");
+require_once('regisztraciosOldal.php');
 
 
 class MyMailer extends PHPMailer {
@@ -45,7 +46,7 @@ $cimzett_neve='xy';
 $targy="regisztráció";
 
 
-$cimzett="bakosmik74@gmail.com"; //ide jön az az e-mail-cím amire küldje a levelet!
+$cimzett=$email; //ide jön az az e-mail-cím amire küldje a levelet!
 
 $mail->AddAddress("$cimzett", "$cimzett_neve");
 //üzenet

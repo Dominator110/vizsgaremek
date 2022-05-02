@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funda of Web IT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -19,7 +18,7 @@
                     <div class="card filter shadow mt-3">
                         <div class="card-header">
                             <h5>szürő 
-                                <button type="submit" class="btn btn-primary btn-sm float-end">Keresés</button>
+                                <button type="submit" class="btn btn-dark btn-sm float-end">Keresés</button>
                             </h5>
                         </div>
                         <div class="card-body">

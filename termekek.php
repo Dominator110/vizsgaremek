@@ -19,7 +19,7 @@
                     <div class="card filter shadow mt-3">
                         <div class="card-header">
                             <h5>Szűrő
-                                <button type="submit" class="btn btn-primary btn-sm float-end">Search</button>
+                                <button type="submit" class="btn btn-dark btn-sm float-end">Keresés</button>
                             </h5>
                         </div>
                         <div class="card-body">

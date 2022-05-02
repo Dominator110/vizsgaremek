@@ -44,7 +44,7 @@
                                         <h5 class="text-uppercase mb-0">Leirás :</h5>
                                 </div>
                          </div>
-                    <div class="image"> <img src=<?= $row["Ferfi_ora_kep"] ?> width="200" height="300"> </div>
+                    <div class="image"> <img src=<?= $row["Ferfi_ora_kep"] ?> width="200" height="250"> </div>
                     <p><?= $row["Ferfi_ora_leiras2"] ?></p> <?php print("<a href='Cart.php?m=".$row['termek_id']."' class='btn btn-dark'>Kosarba</a>")?>
                     </div>
 
